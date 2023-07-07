@@ -1,0 +1,75 @@
+.container-card {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3.6rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 4.5rem;
+  font-size: 1.2rem;
+
+  .team-card {
+    max-width: 24rem;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 6px 0px #c1c1c1;
+
+    .image-container {
+      max-width: 100%;
+      border-radius: 0.75rem;
+      padding: 0.88rem 2rem;
+      box-sizing: border-box;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .mat-divider {
+      display: block;
+      border-top-width: 2px;
+      border-top-style: solid;
+      transform: rotate(-0.333deg);
+      margin: 0rem 1rem 1.5rem 1rem;
+
+      &.yellow {
+        border-top-color: #fcb827;
+      }
+
+      &.red {
+        border-top-color: #cd1141;
+      }
+
+      &.green {
+        border-top-color: #007940;
+      }
+    }
+
+    .card-content {
+      padding-left: 1.2rem;
+      color: #110104;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      padding-bottom: 1.4rem;
+    }
+
+    .card-actions {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 1.44rem;
+
+      .details-button {
+        background-color: #cd1041;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+    }
+
+    .footer-card {
+      padding: 8px;
+    }
+  }
+}

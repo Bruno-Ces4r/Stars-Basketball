@@ -1,1 +1,24 @@
-<p>teams works!</p>
+<div>
+  <div class="container-card">
+    <ng-container *ngFor="let team of teamsDetails">
+      <mat-card class="team-card">
+        <div class="image-container">
+          <img [src]="team.imagePath" [alt]="team.alt" draggable="false" />
+        </div>
+        <mat-divider class="mat-divider" [ngClass]="team.color"></mat-divider>
+        <mat-card-content class="card-content">
+          <p>{{ team.name }}</p>
+        </mat-card-content>
+        <mat-card-actions class="card-actions">
+          <button
+            mat-raised-button
+            class="details-button"
+            (click)="showDetails()"
+          >
+            Detalhes
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>
