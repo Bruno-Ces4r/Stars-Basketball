@@ -1,21 +1,30 @@
 <div>
   <div class="container-card">
-    <ng-container *ngFor="let player of playersDetails">
+    <ng-container *ngFor="let player of playersDetails; let index = index">
       <mat-card class="player-card">
         <div class="image-container">
           <img [src]="player.imagePath" [alt]="player.alt" draggable="false" />
         </div>
         <mat-card-content class="card-content">
-          <p>{{ player.name }}</p>
-          <p>Posição: {{ player.position }}</p>
+          <p>{{ player.name ? player.name : "Nome não cadastrado" }}</p>
+          <p>
+            {{ player.retiree ? "Último time" : "Time atual" }}:
+            {{ player.team !== "" ? player.team : "Não cadastrado" }}
+          </p>
+
+          <ng-container *ngIf="player.showMoreDetails">
+            <p>Posição: {{ player.position }}</p>
+            <p>Curiosidade: {{ player.curiosity }}</p>
+            <p>Participações em filmes e séries: {{ player.participations }}</p>
+          </ng-container>
         </mat-card-content>
         <mat-card-actions class="card-actions">
           <button
             mat-raised-button
             class="details-button"
-            (click)="showDetails()"
+            (click)="showDetails(player)"
           >
-            Detalhes
+            {{ player.showMoreDetails ? "- Detalhes" : "+ Detalhes" }}
           </button>
         </mat-card-actions>
         <!--  <mat-card-footer class="footer-card">

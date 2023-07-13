@@ -11,8 +11,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { HttpClientModule } from '@angular/common/http';
+import { TeamsDetailsComponent } from './modules/teams-details/teams-details.component';
 @NgModule({
-  declarations: [AppComponent, PlayersComponent, TeamsComponent],
+  declarations: [
+    AppComponent,
+    PlayersComponent,
+    TeamsComponent,
+    TeamsDetailsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,6 +29,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatProgressBarModule,
     MatButtonModule,
     MatDividerModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
